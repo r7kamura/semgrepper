@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+- Pass env to semgrep correctly.
+
 ## 0.1.1 - 2022-06-20
 
 ### Fixed
