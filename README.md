@@ -26,7 +26,8 @@ jobs:
 
 ### `config`
 
-- `--config` option value for `semgrep ci`.
+`--config` option value for `semgrep ci`.
+
 - optional
 - default: `.semgrep`
     - Put your config file under this directory (e.g. `.semgrep/rules.yml`)
