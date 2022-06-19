@@ -1,0 +1,20 @@
+name: semgrep-action
+description: Run Semgrep on GitHub Actions.
+inputs:
+  config:
+    description: --config option value for semgrep ci.
+    required: false
+    default: ".semgrep"
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+    - name: Run semgrep
+      run: docker run --rm --volume "${PWD}:/src" returntocorp/semgrep semgrep ci --config ${{ inputs.config }} --json --metrics off > semgrep.json
+    - name: Output semgrep result
+      run: |
+        jq -r '.results[] | . + { severity: (if .extra.severity == "WARNING" then "warning" elif .extra.severity == "ERROR" then "error" else "notice" end) } | "::\(.severity) file=\(.path),line=\(.start.line),col=\(.start.col),endLine=\(.end.line),endColumn=\(.end.col),title=\(.check_id)::\(.extra.message)"' semgrep.json
+      if: ${{ failure() }}
+branding:
+  color: green
+  icon: eye
