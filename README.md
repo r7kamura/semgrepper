@@ -3,6 +3,8 @@
 [Custom action](https://docs.github.com/en//actions/creating-actions/about-custom-actions)
 to run [Semgrep](https://github.com/returntocorp/semgrep) and output results in GitHub Annotations format.
 
+![](images/screenshot.png)
+
 ## Usage
 
 ```yaml
