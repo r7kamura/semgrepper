@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.1 - 2022-06-20
+
 ### Fixed
 
 - Fix missing shell property.
