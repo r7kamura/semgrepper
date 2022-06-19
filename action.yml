@@ -1,5 +1,5 @@
 name: semgrep-action
-description: Run Semgrep on GitHub Actions.
+description: Run Semgrep and output results in GitHub Annotations format.
 inputs:
   config:
     description: --config option value for semgrep ci.

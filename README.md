@@ -1,9 +1,7 @@
 # semgrep-action
 
 [Custom action](https://docs.github.com/en//actions/creating-actions/about-custom-actions)
-to run [Semgrep](https://github.com/returntocorp/semgrep) on GitHub Actions.
-
-This action runs `semgrep ci` and output results by GitHub Annotations.
+to run [Semgrep](https://github.com/returntocorp/semgrep) and output results in GitHub Annotations format.
 
 ## Usage
 
