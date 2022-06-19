@@ -1,4 +1,4 @@
-# semgrep-action
+# semgrepper
 
 [Custom action](https://docs.github.com/en//actions/creating-actions/about-custom-actions)
 to run [Semgrep](https://github.com/returntocorp/semgrep) and output results in GitHub Annotations format.
@@ -19,7 +19,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: r7kamura/semgrep-action@v0
+      - uses: r7kamura/semgrepper@v0
 ```
 
 ## Inputs

@@ -1,4 +1,4 @@
-name: semgrep-action
+name: semgrepper
 description: Run Semgrep and output results in GitHub Annotations format.
 inputs:
   config:
