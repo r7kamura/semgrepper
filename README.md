@@ -13,9 +13,6 @@ name: semgrep
 
 on:
   pull_request:
-  push:
-    branches:
-      - main
 
 jobs:
   run:
