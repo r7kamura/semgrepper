@@ -11,10 +11,12 @@ runs:
     - uses: actions/checkout@v3
     - name: Run semgrep
       run: docker run --rm --volume "${PWD}:/src" returntocorp/semgrep semgrep ci --config ${{ inputs.config }} --json --metrics off > semgrep.json
+      shell: bash
     - name: Output semgrep result
       run: |
         jq -r '.results[] | . + { severity: (if .extra.severity == "WARNING" then "warning" elif .extra.severity == "ERROR" then "error" else "notice" end) } | "::\(.severity) file=\(.path),line=\(.start.line),col=\(.start.col),endLine=\(.end.line),endColumn=\(.end.col),title=\(.check_id)::\(.extra.message)"' semgrep.json
       if: ${{ failure() }}
+      shell: bash
 branding:
   color: green
   icon: eye
